@@ -1,0 +1,24 @@
+package association3;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		Person p = new Person("Xavier");
+		Dog d = new Dog("Juno");
+		
+		p.addDog(d);
+		
+		d = new Dog ("Zoro");
+		
+		p.addDog(d);
+		
+		d = new Dog ("Leo");
+		
+		p.addDog(d);
+		
+		System.out.println(p);
+		
+		System.out.println(p.walkDogs());
+	}
+	
+}

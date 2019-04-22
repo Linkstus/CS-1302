@@ -1,0 +1,24 @@
+package testing;
+
+public class testingStuff {
+
+	
+	public static void main(String[] args) {
+		String[] test = {"ab1b12", "cab3b1", "%*d443a"};
+		String testing = "";
+		String letter = "";
+		String digit = "";
+		String temp = "";
+		
+		for(int i = 0; i < test.length; i++) {
+			testing += test[i];
+		}
+		
+		for(int j = 0; j < testing.length(); j++) {
+				if(temp.indexOf(testing.charAt(j)) == -1)
+					temp += testing.charAt(j);
+		}
+		
+		System.out.println(temp +" " + testing);
+	}
+}

@@ -1,0 +1,59 @@
+package testing;
+
+public class testingStuff {
+
+	
+	public static void main(String[] args) {
+		String[] test = {"ab1b12", "cab3b1", "%*d443a"};
+		String temp = combineCheck(test);
+		String digit = Digit(temp);
+		String letter = Letter(temp);
+		
+		System.out.println(letter + digit);
+	}
+	
+	//helper method 1
+	public static String combineCheck(String[] wrd) {
+		String combine = "";
+		
+		for(int i = 0; i < wrd.length; i++) {
+			combine += wrd[i];
+		}
+		
+		String removed = removeExtra(combine);
+		
+		return removed;
+	}
+	
+	//helper method for combine check
+	public static String removeExtra(String comb) {
+		String remove = "";
+		
+		for(int i = 0; i < comb.length(); i++) {
+			if(remove.indexOf(comb.charAt(i)) == -1)
+				remove += comb.charAt(i);
+		}
+		
+		return remove;
+	}
+	
+	//helper method 2
+	public static String Digit(String temp) {
+		String D = "";
+		for(int i = 0; i < temp.length(); i++) {
+			if(Character.isDigit(temp.charAt(i)))
+				D += temp.charAt(i);
+		}
+		return D;
+	}
+	
+	// helper method 3
+	public static String Letter(String temp) {
+		String L = "";
+		for(int i = 0; i < temp.length(); i++) {
+			if(Character.isLetter(temp.charAt(i)))
+				L += temp.charAt(i);
+		}
+		return L;
+	}
+}

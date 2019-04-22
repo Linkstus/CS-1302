@@ -1,0 +1,34 @@
+package association3;
+
+public class Person {
+	String name;
+	Dog[] dogs = new Dog[4];
+	int numDogs = 0;
+	
+	public Person(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public int getNumDogs() {
+		return numDogs;
+	}
+	
+	public void addDog(Dog d) {
+		dogs[numDogs++] = d;
+	}
+	
+	@Override
+	public String toString() {
+		String msg = "";
+		msg += name + " has " + numDogs + " dogs: ";
+		for(int i = 0; i < numDogs; i++) {
+			msg += dogs[i].getName() + ", ";
+		}
+		
+		return msg;
+	}
+}

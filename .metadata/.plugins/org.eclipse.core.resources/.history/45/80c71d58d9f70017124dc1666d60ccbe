@@ -1,0 +1,49 @@
+# Test 1 Expected Results
+isLevel1()
+12.5
+10
+isLevel1(abc)=false
+isLevel1(abc 123)=false
+isLevel1(&&&&##)=false
+isLevel1(&&&#45)=false
+isLevel1(**aaaa)=false
+isLevel1(ttt333)=true
+isLevel1(BBBBBB)=false
+isLevel1(222^2BB)=true
+isLevel1(c$aBju)=true
+isLevel1(Bgg%2+)=true
+# Test 2 Expected Results
+isLevel2()
+12.5
+10
+isLevel2(abc)=false
+isLevel2(abc 123AA)=false
+isLevel2(&&&&##)=false
+isLevel2(&&&#45)=false
+isLevel2(**aaaa)=false
+isLevel2(ttt333)=false
+isLevel2(BBBBBB)=false
+isLevel2(222^2BB)=false
+isLevel2(c$aBju)=false
+isLevel2(Bgg%2+)=true
+# Test 3 Expected Results
+reverseWords()
+25.0
+4
+reverseWords(The)=The
+reverseWords(The red)=red The
+reverseWords(The red king)=king red The
+reverseWords(The red king has the ring)=ring the has king red The
+# Test 4 Expected Results
+getUniqueCharsAndDigits()
+25.0
+9
+getUniqueCharsAndDigits([*, %])=
+getUniqueCharsAndDigits([abc, def])=abcdef
+getUniqueCharsAndDigits([ab^c, d**ef])=abcdef
+getUniqueCharsAndDigits([123, 456])=123456
+getUniqueCharsAndDigits([1&23, 456])=123456
+getUniqueCharsAndDigits([abc, 123])=abc123
+getUniqueCharsAndDigits([abc, 123, efg])=abcefg123
+getUniqueCharsAndDigits([abc, 1*23, efg])=abcefg123
+getUniqueCharsAndDigits([ab1b12, cab3b1, %*d443a])=abcd1234

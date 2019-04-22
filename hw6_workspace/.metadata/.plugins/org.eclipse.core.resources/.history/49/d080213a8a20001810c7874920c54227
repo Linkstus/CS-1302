@@ -1,0 +1,85 @@
+package prob2;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+public class RectangleTester {
+
+	public static void main(String[] args) {
+		File inFile = new File("src\\prob2\\rectangles.txt");
+		File iREFile = new File("src\\prob2\\illega.Rectangles.txt");
+		
+		try {
+			readFile(inFile, iREFile);
+			
+		}
+		catch(Exception e) {
+			System.out.println("1.) File not found");
+		}
+		
+		//illegalFileRead();
+	}
+	
+	//reads the rectangle.txt file
+	public static void readFile(File inFile, File iREFile) {
+		
+		try {
+			PrintWriter pw = new PrintWriter(iREFile);
+			Scanner fileRead = new Scanner(inFile);
+
+			while(fileRead.hasNext()) {
+				double width = fileRead.nextDouble();
+				double heigth = fileRead.nextDouble();
+
+				try {
+					Rectangle r = new Rectangle(width, heigth);
+
+					System.out.printf("Rectangle: width=%.2f, height=%.2f\n", r.getWidth(), r.getHeight());
+				}
+				catch(IllegalRectangleException iRE) {
+					writeIllegalFile(iRE, pw);
+				}
+				pw.close();
+			}
+			fileRead.close();
+		}
+		catch(Exception e) {
+			System.out.println("2.)File not found");
+		}
+	}
+	
+	//Writes into the illegalRectangle.txt
+	public static void writeIllegalFile(IllegalRectangleException iRE, PrintWriter pw){
+		try {
+			pw.printf("Illegal Rectangle: width=%.2f, height%.2f, area=%.2f\n", iRE.getWidth(), iRE.getHeight(), iRE.getArea());
+		}
+		catch(Exception e) {
+			System.out.println("File not found");
+		}
+	}
+	
+	
+	//testing to see if it actually writes the illegal files into the proper folder
+	public static void illegalFileRead() {
+		File file = new File("src\\prob2\\illegalRectangles.txt");
+		
+		try {
+			Scanner fileRead = new Scanner(file);
+			
+			while(fileRead.hasNext()) {
+				System.out.print("-------------------------------------------------\n"
+						+ fileRead.nextDouble());
+				System.out.print(fileRead.nextDouble()
+						+ "\n------------------------------------------------");
+				
+			}
+			fileRead.close();
+		}
+		catch(Exception e) {
+			System.out.println("IllegalRectangle file not found");
+		}
+	}
+}

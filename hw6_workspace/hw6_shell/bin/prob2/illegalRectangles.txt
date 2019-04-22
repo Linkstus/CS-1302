@@ -1,0 +1,4 @@
+Illegal Rectangle: width=0.50, height=0.25, area=0.13
+Illegal Rectangle: width=0.40, height=0.90, area=0.36
+Illegal Rectangle: width=0.10, height=0.20, area=0.02
+Illegal Rectangle: width=0.50, height=0.10, area=0.05

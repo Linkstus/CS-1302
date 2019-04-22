@@ -1,0 +1,23 @@
+package testing;
+
+public class testingStuff {
+
+	
+	public static void main(String[] args) {
+		String[] test = {"ab1b12", "cab3b1", "%*d443a"};
+		String testing = "";
+		String letter = "";
+		String digit = "";
+		
+		for(int i = 0; i < test.length; i++) {
+			testing += test[i];
+		}
+		char c = ' ';
+		for(int i = 0; i < testing.length(); i++) {
+			c = testing.charAt(i);
+		}
+			System.out.print(c);
+		
+		System.out.println(letter + " " + digit + " " + testing);
+	}
+}

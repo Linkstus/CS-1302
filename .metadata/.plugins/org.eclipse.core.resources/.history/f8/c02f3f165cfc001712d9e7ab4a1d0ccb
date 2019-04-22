@@ -1,0 +1,61 @@
+package prob1;
+
+public class Employee {
+	private double[] hours;
+	private String name;
+	private double payRate;
+	
+	//constructor
+	public Employee(String name, double payRate){
+		hours = new double[7];
+		this.name = name;
+		this.payRate = payRate;
+	}
+	
+	//sets hours
+	public void setHours(int day, double hours) {
+		if(day > 0 && day < 7)
+			this.hours[day] = hours;
+	}
+	
+	public double getPayRate() {
+		return payRate;
+	}
+	
+	public double getHours(int days) {
+		return hours[days];
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public int getNumDaysWorked(double[] hours) {
+		int count = 0;
+		for(double h : hours) {
+			if(h > 0)
+				count++;
+		}
+		return count;
+	}
+	
+	public double getPay(double[] hours) {
+		int countDays = 0;
+		double countHours = 0.0;
+		double overTime = 0.0;
+		double max = 40.0
+		double payOver = 0.0;
+		double timeHalf = getPayRate() / 2;
+		for(int i = 0; i < hours.length; i ++) {
+			if(i >= 0)
+				countDays ++;
+			if(i >= 0 && i < 6) {
+				countHours += hours[i];
+				if(countHours >= 40) {
+					overTime += countHours;
+					max = overTime - max; 
+					payOver = 
+				
+		}
+	}
+}

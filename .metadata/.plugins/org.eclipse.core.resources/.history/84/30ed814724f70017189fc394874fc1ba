@@ -1,0 +1,26 @@
+package testing;
+
+public class testingStuff {
+
+	
+	public static void main(String[] args) {
+		String[] test = {"ab1b12", "cab3b1", "%*d443a"};
+		String testing = "";
+		
+		for(int i = 0; i < test.length; i++) {
+			testing += test[i];
+		}
+		String digit = "";
+		String letter = "";
+		int i = 0;
+		
+		while(i < testing.length()) {
+			if(Character.isDigit(testing.charAt(i)))
+				digit += testing.charAt(i);
+			else if(Character.isLetter(testing.charAt(i)))
+				letter += testing.charAt(i);
+			i++;
+			
+		}
+	}
+}

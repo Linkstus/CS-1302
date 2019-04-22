@@ -1,0 +1,51 @@
+package prob2;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+public class RectangleTester {
+
+	public static void main(String[] args) {
+		try {
+			File inFile = new File("src\\prob2\\rectangles.txt");
+			File iREFile = new File("src\\prob2\\illega.Rectangles.txt");
+			PrintWriter pw = new PrintWriter(iREFile);
+			readFile(inFile, iREFile, pw);
+			pw.close();	
+		}
+		catch(Exception e) {
+			System.out.println("1.) File not found");
+		}
+		
+		//illegalFileRead();
+	}
+	
+	//reads the rectangle.txt file
+	public static void readFile(File inFile, File iREFile,PrintWriter pw) {
+		
+		try {
+			Scanner fileRead = new Scanner(inFile);
+
+			while(fileRead.hasNext()) {
+				double width = fileRead.nextDouble();
+				double heigth = fileRead.nextDouble();
+
+				try {
+					Rectangle r = new Rectangle(width, heigth);
+
+					System.out.println(r.toString());
+				}
+				catch(IllegalRectangleException iRE) {
+					pw.println(iRE.getMessage());
+				}
+			}
+			fileRead.close();
+		}
+		catch(Exception e) {
+			System.out.println("2.)File not found");
+		}
+	}
+}

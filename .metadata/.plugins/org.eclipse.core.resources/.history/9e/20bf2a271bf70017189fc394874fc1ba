@@ -1,0 +1,120 @@
+package prob1;
+
+public class StringExamples {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static boolean isLevel1(String password) {
+		int count = 0;
+		if(isLongEnough(password) && hasNoSpaces(password)) {
+			if(isLowerCase(password))
+				count++;
+			if(isUpperCase(password))
+				count++;
+			if(isDigit(password))
+				count++;
+			if(count >= 2)
+				return true;
+		}
+		return false;
+	}
+	
+	public static boolean isLongEnough(String psw) {
+		int count = 0;
+		for(int i = 0; i < psw.length(); i++) {
+			count += psw.charAt(i);
+		}
+		if(count >= 6)
+			return true;
+		return false;
+	}
+	
+	public static boolean hasNoSpaces(String psw) {
+		for(int i = 0; i < psw.length(); i++) {
+			if(psw.charAt(i) == ' ')
+				return false;
+		}
+		return true;
+	}
+	
+	public static boolean isLowerCase(String psw) {
+		int count = 0;
+		for(int i = 0; i < psw.length(); i++) {
+			if(Character.isLowerCase(psw.charAt(i)))
+				count++;
+		}
+		if(count >= 1)
+			return true;
+		return false;
+	}
+	
+	public static boolean isUpperCase(String psw) {
+		int count = 0;
+		for(int i = 0; i < psw.length(); i++) {
+			if(Character.isUpperCase(psw.charAt(i)))
+				count++;
+		}
+		if(count >= 1)
+			return true;
+		return false;
+	}
+	public static boolean isDigit(String psw) {
+		int count = 0;
+		for(int i = 0; i < psw.length(); i++) {
+			if(Character.isDigit(psw.charAt(i)))
+				count++;
+		}
+		if(count >= 1)
+			return true;
+		return false;
+	}
+
+	public static boolean isLevel2(String password) {
+		int count = 0;
+		if(isLongEnough(password) && hasNoSpaces(password)) {
+			if(isLowerCase(password))
+				count++;
+			if(isUpperCase(password))
+				count++;
+			if(isDigit(password))
+				count++;
+			if(count == 3)
+				return true;
+		}
+		return false;
+	}
+	
+	public static String reverseWords(String wrd) {
+		int pos = wrd.lastIndexOf(' ');
+		String reverse = "";
+		while(pos != -1) {
+			reverse += wrd.substring(pos);
+			wrd = wrd.substring(0, pos);
+			pos = wrd.lastIndexOf(' ');
+		}
+		reverse += " " + wrd;
+		reverse = reverse.trim();
+		return reverse;
+	}
+	
+	public static String getUniqueCharsAndDigits(String[] wrds) {
+		String arrayPlace = "";
+		String letter = "";
+		String digit = "";
+		for(int i = 0; i < wrds.length; i ++) {
+			arrayPlace += wrds[i];
+		}
+		for(int i = 0; i < arrayPlace.length(); i ++) {
+			if(digit.indexOf(arrayPlace.charAt(i)) == (-1))
+				digit += arrayPlace.charAt(i);
+			else if(letter.indexOf(arrayPlace.charAt(i)) == (-1))
+				letter += arrayPlace.charAt(i);
+			else
+				continue;
+		}
+		return letter + digit;
+	}
+}

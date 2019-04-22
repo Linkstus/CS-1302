@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;hw4_shell&apos; to &apos;hw6_shell&apos;&#x0D;&#x0A;- Original element: &apos;hw4_shell&apos;&#x0D;&#x0A;- Renamed element: &apos;hw4_shell&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;hw4_shell&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=hw4_shell" name="hw6_shell" references="true" stamp="1487784682810" version="1.0"/>
+</session>

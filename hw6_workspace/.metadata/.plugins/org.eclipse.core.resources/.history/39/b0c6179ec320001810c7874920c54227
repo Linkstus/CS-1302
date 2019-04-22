@@ -1,0 +1,44 @@
+package prob3;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class NumberAdder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		addingMachine();
+	}
+	
+	public static void addingMachine() {
+		File file = new File("src\\prob3\\values.txt");
+		double sum = 0;
+		int numToSkip = 0;
+		
+		try {
+			Scanner readFile = new Scanner(file);
+			
+			while(readFile.hasNext()) {
+				String current_pos = readFile.next();
+				switch(readFile.next()) {
+					
+					case("s"):
+						numToSkip = Integer.parseInt(current_pos.substring(1));
+						for(int i = 0; i < numToSkip; i++) {
+							readFile.nextLine();
+						}
+						break;
+					default:
+						sum += Integer.parseInt(current_pos);
+						break;
+				}
+			}
+			readFile.close();
+		}
+		catch(Exception e) {
+			System.out.println("File not found");
+		}
+		System.out.println("Sum: " + sum);
+	}
+
+}

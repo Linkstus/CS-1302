@@ -1,0 +1,24 @@
+package string_examples;
+
+import java.util.Scanner;
+
+public class StringExamples {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		testSplitSentences();
+	}
+		public static void testSplitSentences() {
+			System.out.println("testSplitSentences()");
+			Scanner keyboard = new Scanner(System.in);
+			System.out.println("Enter a few sentences with common punctuation");
+			String text = keyboard.nextLine();
+			
+			int count = 1;
+			String[] sentences = text.split("\\.\\s*|\\!\\s*|\\?\\s*");
+			for(String sentence: sentences) {
+				System.out.println("Sentence " + (count++) + ":\"" + sentence + "\"" );
+			}
+			System.out.println();
+			keyboard.close();
+		}
+}

@@ -1,0 +1,49 @@
+package string_examples;
+
+import java.util.Scanner;
+
+public class StringExamples {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//testSplitSentences();
+		//testSplitWords();
+		testStringFormat();
+	}
+		public static void testSplitSentences() {
+			System.out.println("testSplitSentences()");
+			Scanner keyboard = new Scanner(System.in);
+			System.out.println("Enter a few sentences with common punctuation");
+			String text = keyboard.nextLine();
+			
+			int count = 1;
+			String[] sentences = text.split("\\.\\s*|\\!\\s*|\\?\\s*");
+			for(String sentence: sentences) {
+				System.out.println("Sentence " + (count++) + ":\"" + sentence + "\"" );
+			}
+			System.out.println();
+			keyboard.close();
+		}
+		
+		public static void testSplitWords() {
+			System.out.println("testSplitWords()");
+			Scanner keyboard = new Scanner(System.in);
+			System.out.println("Enter a few sentences with common punctuation");
+			String text = keyboard.nextLine();
+			
+			String[] words = text.split("\\s+|\\,\\s*|\\;\\s*|\\:\\s*|\\.\\s*|\\!\\s*|\\?\\s*");
+			System.out.println("Words:");
+			for(String word: words) {
+				System.out.print("\"" + word + "\", ");
+			}
+			System.out.println();
+			keyboard.close();
+		}
+		
+		public static void testStringFormat() {
+			System.out.println("testStringFormat()");
+			
+			double y = 32914.4380239;
+			String msg = String.format("y = %.3f", y);
+			System.out.println(msg);
+		}
+}

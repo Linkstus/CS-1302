@@ -1,0 +1,1 @@
+Illegal Rectangle: Width=0.10, Height=0.20, Area=0.00

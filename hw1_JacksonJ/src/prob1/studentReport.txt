@@ -1,0 +1,54 @@
+Test: 1-isLevel1()
+Correct - Expected: isLevel1(abc)=false | Actual: isLevel1(abc)=false
+Correct - Expected: isLevel1(abc 123)=false | Actual: isLevel1(abc 123)=false
+Correct - Expected: isLevel1(&&&&##)=false | Actual: isLevel1(&&&&##)=false
+Correct - Expected: isLevel1(&&&#45)=false | Actual: isLevel1(&&&#45)=false
+Correct - Expected: isLevel1(**aaaa)=false | Actual: isLevel1(**aaaa)=false
+Correct - Expected: isLevel1(ttt333)=true | Actual: isLevel1(ttt333)=true
+Correct - Expected: isLevel1(BBBBBB)=false | Actual: isLevel1(BBBBBB)=false
+Correct - Expected: isLevel1(222^2BB)=true | Actual: isLevel1(222^2BB)=true
+Correct - Expected: isLevel1(c$aBju)=true | Actual: isLevel1(c$aBju)=true
+Correct - Expected: isLevel1(Bgg%2+)=true | Actual: isLevel1(Bgg%2+)=true
+Summary: 10 out of 10 answers correct : 12.5 points out of 12.5
+
+Test: 2-isLevel2()
+Correct - Expected: isLevel2(abc)=false | Actual: isLevel2(abc)=false
+Correct - Expected: isLevel2(abc 123AA)=false | Actual: isLevel2(abc 123AA)=false
+Correct - Expected: isLevel2(&&&&##)=false | Actual: isLevel2(&&&&##)=false
+Correct - Expected: isLevel2(&&&#45)=false | Actual: isLevel2(&&&#45)=false
+Correct - Expected: isLevel2(**aaaa)=false | Actual: isLevel2(**aaaa)=false
+Correct - Expected: isLevel2(ttt333)=false | Actual: isLevel2(ttt333)=false
+Correct - Expected: isLevel2(BBBBBB)=false | Actual: isLevel2(BBBBBB)=false
+Correct - Expected: isLevel2(222^2BB)=false | Actual: isLevel2(222^2BB)=false
+Correct - Expected: isLevel2(c$aBju)=false | Actual: isLevel2(c$aBju)=false
+Correct - Expected: isLevel2(Bgg%2+)=true | Actual: isLevel2(Bgg%2+)=true
+Summary: 10 out of 10 answers correct : 12.5 points out of 12.5
+
+Test: 3-reverseWords()
+Correct - Expected: reverseWords(The)=The | Actual: reverseWords(The)=The
+Correct - Expected: reverseWords(The red)=red The | Actual: reverseWords(The red)=red The
+Correct - Expected: reverseWords(The red king)=king red The | Actual: reverseWords(The red king)=king red The
+Correct - Expected: reverseWords(The red king has the ring)=ring the has king red The | Actual: reverseWords(The red king has the ring)=ring the has king red The
+Summary: 4 out of 4 answers correct : 25.0 points out of 25.0
+
+Test: 4-getUniqueCharsAndDigits()
+Correct - Expected: getUniqueCharsAndDigits([*, %])= | Actual: getUniqueCharsAndDigits([*, %])=
+Correct - Expected: getUniqueCharsAndDigits([abc, def])=abcdef | Actual: getUniqueCharsAndDigits([abc, def])=abcdef
+Correct - Expected: getUniqueCharsAndDigits([ab^c, d**ef])=abcdef | Actual: getUniqueCharsAndDigits([ab^c, d**ef])=abcdef
+Correct - Expected: getUniqueCharsAndDigits([123, 456])=123456 | Actual: getUniqueCharsAndDigits([123, 456])=123456
+Correct - Expected: getUniqueCharsAndDigits([1&23, 456])=123456 | Actual: getUniqueCharsAndDigits([1&23, 456])=123456
+Correct - Expected: getUniqueCharsAndDigits([abc, 123])=abc123 | Actual: getUniqueCharsAndDigits([abc, 123])=abc123
+Correct - Expected: getUniqueCharsAndDigits([abc, 123, efg])=abcefg123 | Actual: getUniqueCharsAndDigits([abc, 123, efg])=abcefg123
+Correct - Expected: getUniqueCharsAndDigits([abc, 1*23, efg])=abcefg123 | Actual: getUniqueCharsAndDigits([abc, 1*23, efg])=abcefg123
+Correct - Expected: getUniqueCharsAndDigits([ab1b12, cab3b1, %*d443a])=abcd1234 | Actual: getUniqueCharsAndDigits([ab1b12, cab3b1, %*d443a])=abcd1234
+Summary: 9 out of 9 answers correct : 25.0 points out of 25.0
+
+Test: 5-getSmallestSalary()
+Correct - Expected: getSmallestSalary([Jed, Keisha, Jaylen],[22, 33, 44],[68992.9243, 48339.23423, 121042.04328])=Smallest salary:$48,339.23, Name:Keisha, age:33 | Actual: getSmallestSalary([Jed, Keisha, Jaylen],[22, 33, 44],[68992.9243, 48339.23423, 121042.04328])=Smallest salary:$48,339.23, Name:Keisha, age:33
+Summary: 1 out of 1 answers correct : 20.0 points out of 20.0
+
+Test: 6-getSmallestSalary()-only 1 in array
+Correct - Expected: getSmallestSalary([Jed],[22],[12.42])=Smallest salary:$12.42, Name:Jed, age:22 | Actual: getSmallestSalary([Jed],[22],[12.42])=Smallest salary:$12.42, Name:Jed, age:22
+Summary: 1 out of 1 answers correct : 5.0 points out of 5.0
+
+Overall Summary: 100.0 points out of 100.0 (100.0%)

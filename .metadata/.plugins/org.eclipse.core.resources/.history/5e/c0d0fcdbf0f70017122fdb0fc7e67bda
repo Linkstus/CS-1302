@@ -1,0 +1,68 @@
+package friend_helping;
+
+		public class quadraticEquation {
+		   private int a;
+		   private int b;
+		   private int c;
+		   
+		   public quadraticEquation(){
+		   this(1, 1, 1);
+		   }
+		   
+		   public quadraticEquation (int a, int b, int c) {
+		      this.a = a;
+		      this.b = b;
+		      this.c = c;
+		   }
+		   
+		   public int getA() {
+		      return a;
+		   }
+		   
+		   public int getB() {
+		      return b;
+		   }
+		   
+		   public int getC() {
+		      return c;
+		   }
+		   
+		   public void setA (int a) {
+		      this.a = a;
+		   }
+		   
+		   public void setB (int b) {
+		      this.b = b;
+		   }
+		   
+		   public void setC (int c) {
+		      this.c = c;
+		   }
+		   public int getDiscriminant() {
+		        int d = (this.b * this.b) - (4 * (this.a * this.c));
+		        
+		        return d;
+		   }
+		   
+		   public double getRoot1 () {
+		      this.a = a;
+		      this.b = b;
+		      this.c = c;
+
+		      double r1a = -b + Math.sqrt((b * b) - (4 * a * c));
+		      double r1b = r1a/ (2 * a);
+		      double r1 = r1b;
+		      return r1;
+		   }
+		   
+		   public double getRoot2 () {
+		      this.a = a;
+		      this.b = b;
+		      this.c = c;
+		      
+		      double r2a = -b - Math.sqrt((b * b) - (4 * a * c));
+		      double r2b = r2a / (2 * a);
+		      double r2 = r2b;
+		      return r2;
+		   } 
+}
